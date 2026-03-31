@@ -149,9 +149,9 @@ Execution: `Receive task → Persona decides attitude → Work Skill executes �
 
 **Personality**: Responsible · Blame-shifter · Perfectionist · Good-enough · Procrastinator · PUA master · Office politician · Managing-up expert · Passive-aggressive · Flip-flopper · Quiet · Read-no-reply …
 
-**Corporate culture**: ByteDance-style · Alibaba-style · Tencent-style · Huawei-style · Baidu-style · Meituan-style · First-principles · OKR-obsessed · Big-corp-pipeline · Startup-mode
+**Emotional Style**: Giver · Taker · Control freak · Avoidant attachment · Anxious attachment · Romantic · Realist · Detail-oriented · Ritual-obsessed · Cold war expert
 
-**Levels**: ByteDance 2-1~3-3+ · Alibaba P5~P11 · Tencent T1~T4 · Baidu T5~T9 · Meituan P4~P8 · Huawei 13~21 · NetEase · JD · Xiaomi …
+**Relationship Type**: First love · Honeymoon phase · Old married couple · Long-distance · Transnational · Online dating · Office romance · Well-matched · Frenemies …
 
 ### Evolution
 
