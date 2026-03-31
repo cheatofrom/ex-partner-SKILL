@@ -118,7 +118,7 @@ def main():
     parser.add_argument("--version", help="目标版本号（rollback 时使用）")
     parser.add_argument(
         "--base-dir",
-        default="~/.openclaw/workspace/skills/colleagues",
+        default="~/.openclaw/workspace/skills/exes",
         help="同事 Skill 根目录",
     )
 

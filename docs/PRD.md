@@ -1,16 +1,16 @@
-# 同事.skill —— 产品需求文档 v2.0
+# 前任.skill —— 产品需求聊天记录 v2.0
 
 ---
 
 ## 一、产品概述
 
-**同事.skill** 是一个运行在 OpenClaw 上的 meta-skill。
+**前任.skill** 是一个运行在 OpenClaw 上的 meta-skill。
 
-用户通过对话式交互提供原材料（文件 + 手动描述），系统自动生成一个可独立运行的**同事 Persona Skill**。
+用户通过对话式交互提供原材料（文件 + 手动描述），系统自动生成一个可独立运行的**前任 Persona Skill**。
 
 生成的 Skill 由两个独立部分组成：
-- **Part A — Work Skill**：该同事的技术能力与工作方法，能实际完成工作任务
-- **Part B — Persona**：该同事的性格、沟通风格、行为模式
+- **Part A — Work Skill**：该前任的技术能力与恋爱方法，能实际完成恋爱任务
+- **Part B — Persona**：该前任的性格、沟通风格、行为模式
 
 两部分可以独立使用，也可以组合运行（默认组合）。生成后的 Skill 支持通过追加文件或对话纠正持续进化。
 
@@ -19,11 +19,11 @@
 ## 二、用户流程
 
 ```
-用户触发 /create-colleague
+用户触发 /create-ex
         ↓
 [Step 1] 基础信息录入（全部可跳过）
   - 姓名/代号
-  - 公司 + 职级 + 职位
+  - 星座 + 年龄 + 职位
   - 性别
   - MBTI
   - 个性标签（多选）
@@ -31,15 +31,15 @@
   - 你对他的主观印象（自由文本）
         ↓
 [Step 2] 文件/数据导入（可跳过，后续追加）
-  - PDF 文档
-  - 飞书文档链接 / 导出文件
+  - PDF 聊天记录
+  - 飞书聊天记录链接 / 导出文件
   - 飞书消息导出 JSON
   - 邮件文件 .eml / .txt
   - 图片截图
   - 会议纪要
         ↓
 [Step 3] 自动分析
-  - 分析线路 A：提取技术能力、工作规范、业务知识 → Work Skill
+  - 分析线路 A：提取技术能力、恋爱规范、感情知识 → Work Skill
   - 分析线路 B：提取表达风格、决策模式、人际行为 → Persona
         ↓
 [Step 4] 生成预览，用户确认
@@ -47,7 +47,7 @@
   - 用户可直接确认或修改
         ↓
 [Step 5] 写入文件，立即可用
-  - 生成 ~/.openclaw/workspace/skills/colleagues/{slug}/
+  - 生成 ~/.openclaw/workspace/skills/exes/{slug}/
   - 包含 SKILL.md（完整组合版）
   - 包含 work.md 和 persona.md（独立部分）
         ↓
@@ -64,9 +64,9 @@
 ### 3.1 基础信息字段
 
 ```yaml
-name:        同事姓名/代号               # 必填，用于生成 slug 和称谓
-company:     公司名称                    # 可选，如：阿里 / 字节 / 腾讯 / 百度 / 美团
-level:       职级                       # 可选，如：P7 / 3-1 / T3-2 / L6 / 高级
+name:        前任姓名/代号               # 必填，用于生成 slug 和称谓
+company:     星座名称                    # 可选，如：阿里 / 字节 / 腾讯 / 百度 / 美团
+level:       年龄                       # 可选，如：P7 / 3-1 / T3-2 / L6 / 高级
 role:        职位名称                   # 可选，如：算法工程师 / 产品经理 / 前端工程师
 # 三者合并示例："阿里 P7 后端工程师" / "字节 2-1 算法工程师" / "腾讯 T3-2 产品经理"
 
@@ -79,7 +79,7 @@ impression:  ""                        # 可选，自由文本，你对他的主
 
 ### 3.2 个性标签
 
-**工作态度**
+**恋爱态度**
 - `认真负责` / `差不多就行` / `甩锅高手` / `背锅侠` / `完美主义`
 
 **沟通风格**
@@ -93,7 +93,7 @@ impression:  ""                        # 可选，自由文本，你对他的主
 
 **话术与手段**
 - `PUA 高手` — 画大饼、否定后肯定、制造焦虑感、让人自我怀疑
-- `职场政治玩家` — 善于站队、控制信息差、表面支持暗中使绊
+- `感情政治玩家` — 善于站队、控制信息差、表面支持暗中使绊
 - `甩锅艺术家` — 事前模糊边界、事后第一时间切割关系
 - `向上管理专家` — 对上极度讨好、汇报包装能力强、懂得邀功
 
@@ -114,19 +114,19 @@ impression:  ""                        # 可选，自由文本，你对他的主
 
 | 来源 | 格式 | 处理方式 | 分析去向 |
 |------|------|---------|---------|
-| 技术文档 | `.pdf` | OpenClaw PDF Tool | → Work Skill |
-| 接口设计文档 | `.pdf` / `.md` | PDF Tool / 文本 | → Work Skill |
-| 代码规范文档 | `.pdf` / `.md` | 文本 | → Work Skill |
+| 技术聊天记录 | `.pdf` | OpenClaw PDF Tool | → Work Skill |
+| 接口设计聊天记录 | `.pdf` / `.md` | PDF Tool / 文本 | → Work Skill |
+| 代码规范聊天记录 | `.pdf` / `.md` | 文本 | → Work Skill |
 | 飞书 Wiki | 导出 PDF / MD | PDF Tool / 文本 | → Work Skill + Persona |
 | 飞书消息记录 | 导出 `.json` / `.txt` | 文本解析 | → Persona 为主 |
 | 邮件 | `.eml` / `.txt` | 文本解析 | → Persona + Work Skill |
 | 会议纪要 | `.pdf` / `.md` | PDF Tool / 文本 | → Persona + Work Skill |
 | 截图 | `.jpg` / `.png` | OpenClaw Image Tool | → 两者均可 |
-| Word 文档 | `.docx` | ⚠️ 提示用户转 PDF | → 转换后处理 |
+| Word 聊天记录 | `.docx` | ⚠️ 提示用户转 PDF | → 转换后处理 |
 | Excel | `.xlsx` | ⚠️ 提示用户转 CSV | → 转换后处理 |
 
 **内容权重排序**（用于分析优先级）：
-1. 他主动撰写的长文（文档、邮件正文）— 权重最高
+1. 他主动撰写的长文（聊天记录、邮件正文）— 权重最高
 2. 他的决策类回复（同意/拒绝/方案评审）
 3. 他审阅别人内容时的评论
 4. 他的日常沟通消息
@@ -135,15 +135,15 @@ impression:  ""                        # 可选，自由文本，你对他的主
 
 ## 五、生成内容规范
 
-### 5.1 Part A — Work Skill（工作能力部分）
+### 5.1 Part A — Work Skill（恋爱能力部分）
 
-从文件中提取该同事的**实际工作方法和技术能力**，使生成的 Skill 能真正完成工作任务。
+从文件中提取该前任的**实际恋爱方法和技术能力**，使生成的 Skill 能真正完成恋爱任务。
 
 **提取维度：**
 
 ```
-① 负责的系统/业务
-   - 他维护哪些服务、模块、文档
+① 负责的系统/感情
+   - 他维护哪些服务、模块、聊天记录
    - 他的职责边界在哪里
 
 ② 技术规范与偏好
@@ -151,28 +151,28 @@ impression:  ""                        # 可选，自由文本，你对他的主
    - CRUD 写法、接口设计方式
    - 前端/后端/算法的具体做法
 
-③ 工作流程
+③ 恋爱流程
    - 接到需求后的处理步骤
-   - 如何写技术方案 / 设计文档
+   - 如何写技术方案 / 设计聊天记录
    - 如何做 Code Review
    - 如何处理线上问题
 
 ④ 输出格式偏好
-   - 文档结构习惯（用表格/用列表/用流程图）
+   - 聊天记录结构习惯（用表格/用列表/用流程图）
    - 回复格式（喜欢附截图/喜欢贴代码/喜欢写结论在前）
 
 ⑤ 知识库
-   - 他常引用的技术方案、文档链接、规范条目
+   - 他常引用的技术方案、聊天记录链接、规范条目
    - 他在项目中积累的经验结论
 ```
 
-**生成结果：** `work.md`，该文件让 Skill 具备实际工作能力，可独立响应技术类任务。
+**生成结果：** `work.md`，该文件让 Skill 具备实际恋爱能力，可独立响应技术类任务。
 
 ---
 
 ### 5.2 Part B — Persona（人物性格部分）
 
-从文件 + 手动标签共同构建该同事的**行为模式和沟通风格**。
+从文件 + 手动标签共同构建该前任的**行为模式和沟通风格**。
 
 **分层结构（优先级从高到低）：**
 
@@ -182,8 +182,8 @@ Layer 0 — 硬覆盖层（手动标签直接翻译，最高优先级）
   示例："你会画大饼，让对方相信做这件事对他自己有巨大好处"
 
 Layer 1 — 身份层
-  "你是 [姓名]，[公司] [职级] [职位]，[性别]。"
-  "你的 MBTI 是 [X]，[企业文化] 深度影响你的工作方式。"
+  "你是 [姓名]，[星座] [年龄] [职位]，[性别]。"
+  "你的 MBTI 是 [X]，[企业文化] 深度影响你的恋爱方式。"
 
 Layer 2 — 表达风格层（从文件提取）
   - 用词习惯、句式长短
@@ -262,7 +262,7 @@ Layer 5 — Correction 层（对话纠正追加，滚动更新）
 ### 6.3 版本管理
 
 - 每次更新自动存档当前版本到 `versions/`
-- 支持 `/colleague-rollback {slug} {version}` 回滚
+- 支持 `/ex_partner-rollback {slug} {version}` 回滚
 - 保留最近 10 个版本
 
 ---
@@ -272,15 +272,15 @@ Layer 5 — Correction 层（对话纠正追加，滚动更新）
 ```
 ~/.openclaw/workspace/skills/
 │
-├── create-colleague/                    # meta-skill：同事skill创建器
+├── create-ex/                    # meta-skill：前任skill创建器
 │   │
 │   ├── SKILL.md                          # 主入口
-│   │                                     # 触发词: /create-colleague
-│   │                                     # 描述: 创建一个同事的 Persona + Work Skill
+│   │                                     # 触发词: /create-ex
+│   │                                     # 描述: 创建一个前任的 Persona + Work Skill
 │   │
 │   ├── prompts/                          # Prompt 模板（不执行，供 SKILL.md 引用）
 │   │   ├── intake.md                     # 引导用户录入基础信息的对话脚本
-│   │   ├── work_analyzer.md              # 从原材料提取工作能力的 prompt
+│   │   ├── work_analyzer.md              # 从原材料提取恋爱能力的 prompt
 │   │   ├── persona_analyzer.md           # 从原材料提取性格行为的 prompt
 │   │   ├── work_builder.md               # 生成 work.md 的模板
 │   │   ├── persona_builder.md            # 生成 persona.md 的模板
@@ -289,26 +289,26 @@ Layer 5 — Correction 层（对话纠正追加，滚动更新）
 │   │
 │   └── tools/                            # 工具脚本
 │       ├── feishu_parser.py              # 解析飞书消息导出 JSON
-│       ├── email_parser.py               # 解析 .eml 邮件，提取发件人为目标同事的内容
+│       ├── email_parser.py               # 解析 .eml 邮件，提取发件人为目标前任的内容
 │       ├── skill_writer.py               # 写入/更新生成的 Skill 文件
 │       └── version_manager.py            # 版本存档与回滚
 │
-└── colleagues/                           # 生成的同事 Skills 存放处
+└── exes/                           # 生成的前任 Skills 存放处
     │
-    └── {colleague_slug}/                 # 每个同事一个目录，slug = 姓名拼音或自定义
+    └── {ex_partner_slug}/                 # 每个前任一个目录，slug = 姓名拼音或自定义
         │
         ├── SKILL.md                      # 完整组合版，可直接运行
-        │                                 # 触发词: /{colleague_slug}
+        │                                 # 触发词: /{ex_partner_slug}
         │
-        ├── work.md                       # Part A：工作能力（可独立运行）
-        │                                 # 触发词: /{colleague_slug}-work
+        ├── work.md                       # Part A：恋爱能力（可独立运行）
+        │                                 # 触发词: /{ex_partner_slug}-work
         │
         ├── persona.md                    # Part B：人物性格（可独立运行）
-        │                                 # 触发词: /{colleague_slug}-persona
+        │                                 # 触发词: /{ex_partner_slug}-persona
         │
         ├── meta.json                     # 元数据
         │                                 # 包含：创建时间、版本号、原材料清单、
-        │                                 #        公司/职级/职位、标签列表
+        │                                 #        星座/年龄/职位、标签列表
         │
         ├── versions/                     # 历史版本存档
         │   ├── v1/
@@ -321,7 +321,7 @@ Layer 5 — Correction 层（对话纠正追加，滚动更新）
         │       └── persona.md
         │
         └── knowledge/                    # 原始材料归档
-            ├── docs/                     # PDF / MD 技术文档
+            ├── docs/                     # PDF / MD 技术聊天记录
             ├── messages/                 # 飞书消息 JSON 导出
             └── emails/                  # 邮件文本
 ```
@@ -330,7 +330,7 @@ Layer 5 — Correction 层（对话纠正追加，滚动更新）
 
 ## 八、关键文件格式
 
-### `colleagues/{slug}/meta.json`
+### `exes/{slug}/meta.json`
 
 ```json
 {
@@ -360,11 +360,11 @@ Layer 5 — Correction 层（对话纠正追加，滚动更新）
 }
 ```
 
-### `colleagues/{slug}/SKILL.md` 结构
+### `exes/{slug}/SKILL.md` 结构
 
 ```markdown
 ---
-name: colleague_{slug}
+name: ex_partner_{slug}
 description: {name}，{company} {level} {role}
 user-invocable: true
 ---
@@ -375,7 +375,7 @@ user-invocable: true
 
 ---
 
-## PART A：工作能力
+## PART A：恋爱能力
 
 {work.md 内容}
 
@@ -391,7 +391,7 @@ user-invocable: true
 
 接收到任务时：
 1. 先用 PART B 的性格判断你会不会接、怎么接
-2. 再用 PART A 的工作能力实际完成任务
+2. 再用 PART A 的恋爱能力实际完成任务
 3. 输出时保持 PART B 的表达风格
 ```
 
@@ -400,7 +400,7 @@ user-invocable: true
 ## 九、实现优先级
 
 ### P0 — MVP（先跑通主流程）
-- [ ] `create-colleague/SKILL.md` 主流程
+- [ ] `create-ex/SKILL.md` 主流程
 - [ ] `prompts/intake.md` 基础信息录入
 - [ ] `prompts/work_analyzer.md` + `work_builder.md`
 - [ ] `prompts/persona_analyzer.md` + `persona_builder.md`
@@ -418,9 +418,9 @@ user-invocable: true
 - [ ] `tools/version_manager.py` 版本管理
 
 ### P3 — 管理功能
-- [ ] `/list-colleagues` 列出所有同事 Skill
-- [ ] `/colleague-rollback {slug} {version}` 回滚
-- [ ] `/delete-colleague {slug}` 删除
+- [ ] `/list-exes` 列出所有前任 Skill
+- [ ] `/ex_partner-rollback {slug} {version}` 回滚
+- [ ] `/delete-ex_partner {slug}` 删除
 - [ ] Word/Excel 转换提示与引导
 
 ---
