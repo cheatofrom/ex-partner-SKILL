@@ -2,12 +2,14 @@
 
 # ex_partner.skill
 
-> *"You AI guys are traitors to the codebase — you've already killed frontend, now you're coming for backend, QA, ops, infosec, chip design, and eventually yourselves and all of humanity"*
+> *"The warmth of the past still lingers"*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://python.org)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green)](https://agentskills.io)
+
+> **Note**: This project is a fork of [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill.git) heavily modified for an "ex-partner" theme. Current repository: [cheatofrom/ex-partner](https://github.com/cheatofrom/ex-partner.git).
 
 <br>
 
@@ -57,16 +59,16 @@ and get an **AI Skill that actually works like them**
 ```bash
 # Install to current project (run at git repo root)
 mkdir -p .claude/skills
-git clone https://github.com/titanwings/ex_partner-skill .claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner.git .claude/skills/create-ex
 
 # Or install globally (available in all projects)
-git clone https://github.com/titanwings/ex_partner-skill ~/.claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner.git ~/.claude/skills/create-ex
 ```
 
 ### OpenClaw
 
 ```bash
-git clone https://github.com/titanwings/ex_partner-skill ~/.openclaw/workspace/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner.git ~/.openclaw/workspace/skills/create-ex
 ```
 
 ### Dependencies (optional)

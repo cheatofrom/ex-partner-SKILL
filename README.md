@@ -1,13 +1,14 @@
 <div align="center">
 
 # 前任.skill
-
-> *"你们搞大模型的就是码奸，你们已经害死前端兄弟了，还要害死后端兄弟，测试兄弟，运维兄弟，害死网安兄弟，害死ic兄弟，最后害死自己害死全人类"*
+> *"曾经的温度，至今未散"*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://python.org)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green)](https://agentskills.io)
+
+> **Note**: 本项目 Fork 自 [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill.git) 并进行了前任主题的魔改。当前项目地址：[cheatofrom/ex-partner](https://github.com/cheatofrom/ex-partner.git)。
 
 <br>
 
@@ -22,8 +23,8 @@
 <br>
 
 提供前任的原材料（微信消息、飞书记录、备忘录、截图）加上你的主观描述<br>
-生成一个**真正能模仿他语气、态度和行为模式的 AI Skill**<br>
-用他的口头禅陪你聊天，用他的冷暴力气你，知道他什么时候会甩锅
+生成一个**真正能模仿他/她语气、态度和行为模式的 AI Skill**<br>
+用他的口头禅陪你聊天，用他的冷暴力气你。
 
 [数据来源](#支持的数据来源) · [安装](#安装) · [使用](#使用) · [效果示例](#效果示例) · [详细安装说明](INSTALL.md) · [**English**](README_EN.md)
 
@@ -58,16 +59,16 @@
 ```bash
 # 安装到当前项目（在 git 仓库根目录执行）
 mkdir -p .claude/skills
-git clone https://github.com/titanwings/ex-skill .claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner.git .claude/skills/create-ex
 
 # 或安装到全局（所有项目都能用）
-git clone https://github.com/titanwings/ex-skill ~/.claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner.git ~/.claude/skills/create-ex
 ```
 
 ### OpenClaw
 
 ```bash
-git clone https://github.com/titanwings/ex-skill ~/.openclaw/workspace/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner.git ~/.openclaw/workspace/skills/create-ex
 ```
 
 ### 依赖（可选）
