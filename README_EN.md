@@ -203,11 +203,11 @@ create-ex/
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=titanwings%2Fex_partner-skill&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=cheatofrom%2Fex-partner-SKILL&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=titanwings/ex_partner-skill&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=titanwings/ex_partner-skill&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=titanwings/ex_partner-skill&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=cheatofrom/ex-partner-SKILL&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=cheatofrom/ex-partner-SKILL&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=cheatofrom/ex-partner-SKILL&type=date&legend=top-left" />
  </picture>
 </a>
 
@@ -215,6 +215,6 @@ create-ex/
 
 <div align="center">
 
-MIT License © [titanwings](https://github.com/titanwings)
+MIT License © [cheatofrom](https://github.com/cheatofrom)
 
 </div>
