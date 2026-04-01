@@ -9,7 +9,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green)](https://agentskills.io)
 
-> **Note**: This project is a fork of [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill.git) heavily modified for an "ex-partner" theme. Current repository: [cheatofrom/ex-partner](https://github.com/cheatofrom/ex-partner.git).
+> **Note**: This project is a fork of [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill.git) heavily modified for an "ex-partner" theme. Current repository: [cheatofrom/ex-partner-SKILL](https://github.com/cheatofrom/ex-partner-SKILL.git).
 
 <br>
 
@@ -59,16 +59,16 @@ and get an **AI Skill that actually works like them**
 ```bash
 # Install to current project (run at git repo root)
 mkdir -p .claude/skills
-git clone https://github.com/cheatofrom/ex-partner.git .claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git .claude/skills/create-ex
 
 # Or install globally (available in all projects)
-git clone https://github.com/cheatofrom/ex-partner.git ~/.claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git ~/.claude/skills/create-ex
 ```
 
 ### OpenClaw
 
 ```bash
-git clone https://github.com/cheatofrom/ex-partner.git ~/.openclaw/workspace/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git ~/.openclaw/workspace/skills/create-ex
 ```
 
 ### Dependencies (optional)

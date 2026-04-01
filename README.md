@@ -8,7 +8,7 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green)](https://agentskills.io)
 
-> **Note**: 本项目 Fork 自 [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill.git) 并进行了前任主题的魔改。当前项目地址：[cheatofrom/ex-partner](https://github.com/cheatofrom/ex-partner.git)。
+> **Note**: 本项目 Fork 自 [titanwings/colleague-skill](https://github.com/titanwings/colleague-skill.git) 并进行了前任主题的魔改。当前项目地址：[cheatofrom/ex-partner-SKILL](https://github.com/cheatofrom/ex-partner-SKILL.git)。
 
 <br>
 
@@ -59,16 +59,16 @@
 ```bash
 # 安装到当前项目（在 git 仓库根目录执行）
 mkdir -p .claude/skills
-git clone https://github.com/cheatofrom/ex-partner.git .claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git .claude/skills/create-ex
 
 # 或安装到全局（所有项目都能用）
-git clone https://github.com/cheatofrom/ex-partner.git ~/.claude/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git ~/.claude/skills/create-ex
 ```
 
 ### OpenClaw
 
 ```bash
-git clone https://github.com/cheatofrom/ex-partner.git ~/.openclaw/workspace/skills/create-ex
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git ~/.openclaw/workspace/skills/create-ex
 ```
 
 ### 依赖（可选）
