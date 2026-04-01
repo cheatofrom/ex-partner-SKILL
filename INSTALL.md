@@ -1,4 +1,4 @@
-# 同事.skill 安装说明
+# 前任.skill 安装说明
 
 ---
 
@@ -14,15 +14,15 @@ cd $(git rev-parse --show-toplevel)
 
 # 方式 1：安装到当前项目
 mkdir -p .claude/skills
-git clone https://github.com/titanwings/colleague-skill .claude/skills/create-colleague
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git .claude/skills/create-ex
 
 # 方式 2：安装到全局（所有项目都能用）
-git clone https://github.com/titanwings/colleague-skill ~/.claude/skills/create-colleague
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git ~/.claude/skills/create-ex
 ```
 
-然后在 Claude Code 中说 `/create-colleague` 即可启动。
+然后在 Claude Code 中说 `/create-ex` 即可启动。
 
-生成的同事 Skill 默认写入 `./colleagues/` 目录。
+生成的前任 Skill 默认写入 `./exes/` 目录。
 
 ---
 
@@ -30,10 +30,10 @@ git clone https://github.com/titanwings/colleague-skill ~/.claude/skills/create-
 
 ```bash
 # 克隆到 OpenClaw 的 skills 目录
-git clone https://github.com/titanwings/colleague-skill ~/.openclaw/workspace/skills/create-colleague
+git clone https://github.com/cheatofrom/ex-partner-SKILL.git ~/.openclaw/workspace/skills/create-ex
 ```
 
-重启 OpenClaw session，说 `/create-colleague` 启动。
+重启 OpenClaw session，说 `/create-ex` 启动。
 
 ---
 
@@ -95,7 +95,7 @@ python3 tools/feishu_browser.py \
 ## 快速验证
 
 ```bash
-cd ~/.claude/skills/create-colleague   # 或你的项目 .claude/skills/create-colleague
+cd ~/.claude/skills/create-ex   # 或你的项目 .claude/skills/create-ex
 
 # 测试飞书解析器
 python3 tools/feishu_parser.py --help
@@ -103,8 +103,8 @@ python3 tools/feishu_parser.py --help
 # 测试邮件解析器
 python3 tools/email_parser.py --help
 
-# 列出已有同事 Skill
-python3 tools/skill_writer.py --action list --base-dir ./colleagues
+# 列出已有前任 Skill
+python3 tools/skill_writer.py --action list --base-dir ./exes
 ```
 
 ---
@@ -114,16 +114,16 @@ python3 tools/skill_writer.py --action list --base-dir ./colleagues
 本项目整个 repo 就是一个 skill 目录（AgentSkills 标准格式）：
 
 ```
-colleague-skill/        ← clone 到 .claude/skills/create-colleague/
+ex-partner-SKILL/        ← clone 到 .claude/skills/create-ex/
 ├── SKILL.md            # skill 入口（官方 frontmatter）
 ├── prompts/            # 分析和生成的 Prompt 模板
 ├── tools/              # Python 工具脚本
 ├── docs/               # 文档（PRD 等）
 │
-└── colleagues/         # 生成的同事 Skill 存放处（.gitignore 排除）
+└── exes/               # 生成的前任 Skill 存放处（.gitignore 排除）
     └── {slug}/
-        ├── SKILL.md            # 完整 Skill（Persona + Work）
-        ├── work.md             # 仅工作能力
+        ├── SKILL.md            # 完整 Skill（Persona + 恋爱史）
+        ├── work.md             # 仅恋爱史/技能
         ├── persona.md          # 仅人物性格
         ├── meta.json           # 元数据
         ├── versions/           # 历史版本
